@@ -7,77 +7,67 @@ $colors: $blue, $red, $accent
     .carousel-services .owl-item:nth-child(#{length($colors)}n+#{$i})
         background-color: nth($colors, $i)
 
-.carousel-services .owl-item:nth-child(2n+2) .carousel-services-item 
-    -webkit-box-orient: vertical
-    -webkit-box-direction: normal
-    -webkit-flex-direction: column
-    -ms-flex-direction: column
-    flex-direction: column
 
-
-.carousel-services-item
-    display: flex
-    flex-direction: column-reverse
-    font-size: 1.8rem
-    text-align: center
-    font-weight: 300    
-    color: #fff
-    position: relative
-.carousel-services-item:hover > .carousel-services .owl-item .carousel-services-image
-    opacity: 1
-
-.carousel-services-content
-    position: relative
-    display: flex
-    padding: 60px 10% 80px
-
-.carousel-service-composition
-    margin: auto
-    text-align: center
-    width: 100%
-    h3
-        text-transform: uppercase
-        font-weight: 800
-        font-size: 2.8rem
-        margin-top: 5px
-        line-height: 1.5
-        margin-bottom: 2rem
-        span
-            font-size: 1.8rem
-            display: block
-            font-weight: 300
-
-
-.carousel-services 
-    .owl-item 
-        .carousel-services-image
-            opacity: .7
-            transition: opacity .5s easy
-            background-size: cover
-            background-position: center 
-        .carousel-logo
-            text-align: center        
-            img
-                display: inline-block;
-                width: 100px;
-                height: auto;
-   
-.carousel-services-list
-    margin: 0
-    padding: 0
-    list-style: none
-    margin-bottom: 2.5rem
-    li
-        border-bottom: 1px solid rgba(0,0,0,.1)
-        padding: 1rem
-        strong
-            font-family: firasans;
-            color: #4a4a4a;
-    li:last-child
-        border-bottom: none
-
-
-.carousel-services 
+.carousel-services
+    background-color: $dark 
+    &-item
+        display: flex
+        flex-direction: column-reverse
+        font-size: 1.8rem
+        text-align: center
+        font-weight: 300    
+        color: #fff
+        position: relative
+        &:hover
+            .carousel-services-image
+                opacity: 1
+    .owl-item
+        &:nth-child(2n+2)
+            .carousel-services-item
+                flex-direction: column
+    &-image
+        opacity: .7        
+        background-size: cover
+        background-position: center
+        transition: opacity .5s ease 
+    &-content
+        position: relative
+        display: flex
+        padding: 6rem 10% 8rem
+    &-composition
+        margin: auto
+        text-align: center
+        width: 100%
+        h3
+            text-transform: uppercase
+            font-weight: 800
+            font-size: 2.8rem
+            margin-top: 5px
+            line-height: 1.5
+            margin-bottom: 2rem
+            span
+                font-size: 1.8rem
+                display: block
+                font-weight: 300
+    &-list
+        margin: 0
+        padding: 0
+        list-style: none
+        margin-bottom: 2.5rem
+        li
+            border-bottom: 1px solid rgba(0,0,0,.1)
+            padding: 1rem
+            strong
+                font-family: firasans
+                color: #4a4a4a
+        li:last-child
+            border-bottom: none
+    .carousel-logo
+        text-align: center        
+        img
+            display: inline-block
+            width: 100px
+            height: auto
     .owl-nav 
         position: absolute
         top: 0
@@ -95,3 +85,7 @@ $colors: $blue, $red, $accent
             left: 0
         .owl-next
             right: 0
+
+.owl-carousel
+    .owl-item
+        backface-visibility: inherit
