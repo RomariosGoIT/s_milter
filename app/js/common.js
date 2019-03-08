@@ -23,29 +23,42 @@ $(() => {
       $('.hamburger').removeClass('is-active');
     });
 
-  $('.carousel-services').owlCarousel({
-    loop: true,
-    nav: true,
-    smartSpeed: 700,
-    navText: [
-      '<i class="fas fa-angle-double-left"></i>',
-      '<i class="fas fa-angle-double-right"></i>',
-    ],
-    navElement: 'div',
-    responsiveClass: true,
-    dots: false,
-    responsive: {
-      0: {
-        items: 1,
+  $('.carousel-services')
+    .owlCarousel({
+      // loop: true,
+      nav: true,
+      smartSpeed: 700,
+      navText: [
+        '<i class="fas fa-angle-double-left"></i>',
+        '<i class="fas fa-angle-double-right"></i>',
+      ],
+      navElement: 'div',
+      responsiveClass: true,
+      dots: false,
+      responsive: {
+        0: {
+          items: 1,
+        },
+        800: {
+          items: 2,
+        },
+        1200: {
+          items: 3,
+        },
       },
-      800: {
-        items: 2,
-      },
-      1200: {
-        items: 3,
-      },
-    },
-  });
+    })
+    .on('changed.owl.carousel', function() {
+      carouselServices();
+    });
+
+  function onResize() {
+    return $('.carousel-services-content').equalHeights();
+  }
+  onResize();
+
+  // window.onresize = function() {
+  //   onResize();
+  // };
 
   function carouselServices() {
     $('.carousel-services-item').each(function() {
