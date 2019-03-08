@@ -1,9 +1,22 @@
-.s-king 
-    padding: 5% 0
+.s
     background-color: #151515
-    strong, span
-        color: $accent
-    h2
-        margin: 2.4rem 0
-    p
-        margin: 3rem 0
+    &-king, &-review, &-partners 
+        padding: 5% 0
+    &-king    
+        strong, span
+            color: $accent
+        h2
+            margin: 2.4rem 0
+        p
+            margin: 3rem 0
+    
+        .fotorama__nav-wrap 
+            bottom: 15px
+            position: absolute
+            padding: 0 30px
+            width: 100%
+        .fotorama__thumb
+            border: 4px #fff solid
+            transition: border-color .5s ease
+            &-border
+                border-color: #3d3c3c
