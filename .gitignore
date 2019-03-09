@@ -1,6 +1,5 @@
 /node_modules/
 /dist/
-/sass
 /.git/
 /**/_backstage
 /**/package-lock.json
