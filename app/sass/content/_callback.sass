@@ -1,0 +1,47 @@
+.s-call
+    background-repeat: no-repeat
+    background-color: #fff
+    background-position: 25%
+    &::before
+        content: ''
+        width: 50%
+        right: 0
+        position: absolute
+        height: 100%
+        background-color: rgba($accent, .92)
+.callback
+    padding: 25% 0
+    color: #fff
+    position: relative
+    p
+        margin-top: 0
+    input
+        width: 100%
+        color: #fff
+        margin-top: 1.7rem
+    &-logo
+        img
+            width: 10rem
+            height: auto
+    .formhead 
+        margin-top: 0
+        line-height: 1.5
+        white-space: nowrap
+        margin-bottom: 0
+        font-size: 3rem
+        text-transform: uppercase
+        font-weight: 800
+    .success 
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        text-transform: uppercase
+        font-weight: 700
+        display: -webkit-box
+        display: -webkit-flex
+        display: -ms-flexbox
+        display: flex
+        z-index: 10
+        display: none

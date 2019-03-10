@@ -68,4 +68,7 @@ $(() => {
     });
   }
   carouselServices();
+
+
+  $('select').selectize(options);
 });
