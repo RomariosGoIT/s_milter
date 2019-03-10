@@ -56,10 +56,6 @@ $(() => {
   }
   onResize();
 
-  // window.onresize = function() {
-  //   onResize();
-  // };
-
   function carouselServices() {
     $('.carousel-services-item').each(function() {
       let ths = $(this);
@@ -69,6 +65,18 @@ $(() => {
   }
   carouselServices();
 
+  // Selectize
 
-  $('select').selectize(options);
+  $('select').selectize({
+    create: false,
+    sortField: 'text',
+    createFilter: null,
+    persist: false,
+    onFocus: function() {
+      var input = 'selectize-input input',
+        wrapper = 'selectize-input';
+      $('.' + input).attr('readonly', true);
+      $('.' + input + ', .' + wrapper).css('cursor', 'pointer');
+    },
+  });
 });
