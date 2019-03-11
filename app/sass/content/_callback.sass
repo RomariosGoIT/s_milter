@@ -1,7 +1,8 @@
 .s-call
+    background-size: contain
     background-repeat: no-repeat
     background-color: #fff
-    background-position: 25%
+    background-position: 10%
     &::before
         content: ''
         width: 50%
@@ -11,14 +12,26 @@
         background-color: rgba($accent, .92)
 .callback
     padding: 25% 0
-    color: #fff
     position: relative
     p
         margin-top: 0
-    input
+    input, textarea, select 
         width: 100%
         color: #fff
         margin-top: 1.7rem
+        &::-webkit-input-placeholder
+            color: #fff
+            opacity: 1
+        &::-moz-placeholder
+            color: #fff
+            opacity: 1
+        &::-ms-input-placeholder
+            color: #fff
+        option
+            color: #333
+
+    button
+        margin-top: 4rem
     &-logo
         img
             width: 10rem
@@ -31,17 +44,37 @@
         font-size: 3rem
         text-transform: uppercase
         font-weight: 800
-    .success 
-        position: absolute
-        top: 0
-        left: 0
-        right: 0
-        bottom: 0
-        text-transform: uppercase
-        font-weight: 700
-        display: -webkit-box
-        display: -webkit-flex
-        display: -ms-flexbox
-        display: flex
-        z-index: 10
-        display: none
+
+
+input, textarea, select
+    background-color: transparent
+    border: rgba(0,0,0,.1) 1px solid
+    border-bottom: rgba(0,0,0,.1) 2px solid
+    border-radius: 1px
+    padding: .8rem 2.2rem
+    outline: none
+    display: inline-block
+    font-size: 1.6rem
+    color: #333
+select
+    padding: 10px 22px
+
+.success 
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    text-transform: uppercase
+    font-weight: 700
+    display: flex
+    z-index: 10
+    display: none
+    span
+        margin: auto
+    & ~ *
+        transition: all .5s ease
+    &.active
+        & ~ *
+            opacity: .5
+            filter: blur(10px)
