@@ -89,15 +89,16 @@ select
     line-height: inherit
     text-align: left
 .selectize-control.single
-    .selectize-dropdown [data-selectable]
-        padding: 10px 22px
     .selectize-dropdown
          font-size: 1.5rem
          border: none
          border-radius: 0
          text-align: left
-         .option.active
-             background-color: #fef4e1
+         &-content
+             .option
+                padding: 10px 22px
+                &.active
+                    background-color: lighten($accent, 25)
              
     .selectize-input 
         input
