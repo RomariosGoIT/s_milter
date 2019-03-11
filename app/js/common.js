@@ -1,4 +1,4 @@
-$(() => {
+$(function() {
   $('#my-menu').mmenu({
     extensions: [
       'widescreen',
@@ -14,12 +14,12 @@ $(() => {
     },
   });
 
-  let api = $('#my-menu').data('mmenu');
+  var api = $('#my-menu').data('mmenu');
   api
-    .bind('opened', () => {
+    .bind('opened', function() {
       $('.hamburger').addClass('is-active');
     })
-    .bind('closed', () => {
+    .bind('closed', function() {
       $('.hamburger').removeClass('is-active');
     });
 
@@ -58,8 +58,8 @@ $(() => {
 
   function carouselServices() {
     $('.carousel-services-item').each(function() {
-      let ths = $(this);
-      let thsth = ths.find('.carousel-services-content').outerHeight();
+      var ths = $(this);
+      var thsth = ths.find('.carousel-services-content').outerHeight();
       ths.find('.carousel-services-image').css('min-height', thsth);
     });
   }
