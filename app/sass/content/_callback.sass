@@ -15,7 +15,9 @@
     position: relative
     p
         margin-top: 0
-    input, textarea, select 
+    input, textarea, select,  
+    .selectize-control .selectize-input,
+    .selectize-control.single .selectize-input.input-active 
         width: 100%
         color: #fff
         margin-top: 1.7rem
@@ -46,7 +48,9 @@
         font-weight: 800
 
 
-input, textarea, select
+input, textarea, select, 
+.selectize-control .selectize-input,
+.selectize-control.single .selectize-input.input-active
     background-color: transparent
     border: rgba(0,0,0,.1) 1px solid
     border-bottom: rgba(0,0,0,.1) 2px solid
@@ -78,3 +82,36 @@ select
         & ~ *
             opacity: .5
             filter: blur(10px)
+
+.selectize-control .selectize-input
+    box-shadow: none
+    overflow: inherit
+    line-height: inherit
+    text-align: left
+.selectize-control.single
+    .selectize-dropdown [data-selectable]
+        padding: 10px 22px
+    .selectize-dropdown
+         font-size: 1.5rem
+         border: none
+         border-radius: 0
+         text-align: left
+         .option.active
+             background-color: #fef4e1
+             
+    .selectize-input 
+        input
+            font-size: 1.6rem
+        &:before
+            display: none
+        &:after
+            border: none
+            content: '\f107'
+            font-family: "Font Awesome 5 Free"
+            font-weight: 900
+            color: #fff
+            position: absolute
+            right: 3rem
+            top: 1.2rem
+    .dropdown-active::after
+        content: '\f106'
