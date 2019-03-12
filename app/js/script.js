@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
   document.querySelectorAll('section h2').forEach(item => {
-    const res = item.innerHTML.replace(/(\S+)\s*$/, '<span>$1</span>');
+    const res = item.innerHTML.replace(/^(\S+)/, '<span>$1</span>');
     return (item.innerHTML = res);
   });
 });

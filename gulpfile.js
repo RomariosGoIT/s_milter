@@ -24,15 +24,15 @@ gulp.task('clearcache', function() {
   return cache.clearAll();
 });
 
-gulp.task('common-js', function() {
-  return gulp
-    .src(['app/js/common.js'])
-    .pipe(concat('common.min.js'))
-    .pipe(uglify())
-    .pipe(gulp.dest('app/js'));
-});
+// gulp.task('common-js', function() {
+//   return gulp
+//     .src(['app/js/common.js'])
+//     .pipe(concat('common.min.js'))
+//     .pipe(uglify())
+//     .pipe(gulp.dest('app/js'));
+// });
 
-gulp.task('scripts', gulp.parallel('common-js'), function() {
+gulp.task('scripts', function() {
   return (
     gulp
       .src([
@@ -42,7 +42,7 @@ gulp.task('scripts', gulp.parallel('common-js'), function() {
         'app/libs/fotorama/fotorama.js',
         'app/libs/selectize/js/standalone/selectize.min.js',
         'app/libs/equalHeights/equalheights.js',
-        'app/js/common.min.js', // Всегда в конце
+        'app/js/common.js', // Всегда в конце
       ])
       .pipe(concat('scripts.min.js'))
       // .pipe(uglify()) // Минимизировать весь js (на выбор)

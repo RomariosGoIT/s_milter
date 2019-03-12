@@ -65,6 +65,13 @@ $(function() {
   }
   carouselServices();
 
+  $('.carousel-reviews').owlCarousel({
+    loop: true,
+    items: 1,
+    smartSpeed: 700,
+    nav: false,
+  });
+
   // Selectize
   $('select').selectize({
     create: false,
