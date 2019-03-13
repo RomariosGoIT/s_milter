@@ -1,0 +1,83 @@
+.main-footer
+    background-color: #242424
+    color: #fff
+    padding: 3% 0
+    font-size: 1.4rem
+    .footer-column
+        margin: 1.5rem 0
+        p
+           position: relative
+           font-size: 1.5rem
+           padding-left: 2rem
+           font-weight: 300
+           margin: 0 0 2rem
+           .fa
+                position: absolute
+                left: 0
+                top: 5px
+                font-size: 16px
+                color: #797979
+        .footer-phone
+            font-size: 26px
+            font-family: firasans
+            padding-top: 10px
+            display: block
+            .fa
+                top: 21px
+                font-size: 18px
+
+    .logo-footer
+        width: 12.8rem
+        height: auto
+        + p
+            color: #777
+            padding: 0
+            margin-top: 1.5rem
+            margin-bottom: 1.5rem
+            font-size: 1.35rem
+.social-footer
+    margin-top: 3.8rem
+    opacity: .8
+    .social-link
+        li
+            display: inline-block
+            margin: 3px
+            a
+                color: rgba(255, 255, 255, .6)
+                transition: all .25 ease
+                margin-bottom: 0
+
+
+.footer-menu
+	ul
+        padding: 0
+        margin: 0
+        list-style: none
+        li.active
+            a
+                color: $accent
+                &::before
+                    color: $accent        
+        a
+            color: #979797
+            transition: color .25s ease
+            text-sdecoration: underline
+            padding: 4px 0
+            padding-left: 2rem
+            position: relative
+            display: inline-block
+            &:hover, &:focus
+                color: $accent
+                &::before
+                    color: $accent
+            &::before
+                position: absolute
+                left: 0
+                top: 6px
+                content: "\f3a5"
+                font-family: 'Font Awesome 5 Free'
+                font-size: 1.2rem
+                margin-right: 0.8rem
+                text-decoration: none
+                color: #fff		
+                transition: color .25s ease

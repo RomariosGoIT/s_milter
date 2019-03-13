@@ -1,0 +1,43 @@
+.s-partners
+    padding: 5% 0;
+    background-color: #151515;
+    &::before        
+        background-color: #fff !important
+    h2
+        margin-top: 0
+        color: $accent
+.owl-carousel.carousel-partners
+    .partner
+        height: 100%
+        display: flex
+        margin: auto
+    .owl-stage
+        display: flex
+    .owl-item
+        margin-top: 3rem
+        img
+            max-width: 100%
+            width: auto
+            display: inline-block
+            margin: auto
+    .owl-nav
+        position: absolute
+        top: 0
+        width: 100%
+        z-index: 2
+        >div
+            position: absolute
+            top: 5rem
+            transition: all .25s ease
+            &:hover
+                opacity: .5
+            &.owl-next
+                right: -6rem
+            &.owl-prev
+                left: -6rem
+            .fa
+                color: #999
+                font-size: 3rem
+        &.disabled
+            display: block
+        
