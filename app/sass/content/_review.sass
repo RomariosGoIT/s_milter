@@ -46,9 +46,11 @@
             display: inline-block
             transition: all .25s ease
 
-            &.active
+            &.active, &:focus
+                outline: none
                 background-color: $accent
                 transform: scale(1.3)
+            
 
 .carousel-reviews
     margin-top: 6rem    
