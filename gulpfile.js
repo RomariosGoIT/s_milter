@@ -81,14 +81,6 @@ gulp.task('watch', function() {
   gulp.watch('app/*.html', browserSync.reload);
 });
 
-gulp.task('imagemin', function(done) {
-  gulp
-    .src('app/img/**/*')
-    .pipe(cache(imagemin()))
-    .pipe(gulp.dest('dist/img'));
-  return done();
-});
-
 gulp.task('build', function(done) {
   gulp.parallel('removedist', 'sass', 'scripts');
   var buildFiles = gulp
