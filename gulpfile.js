@@ -90,7 +90,7 @@ gulp.task('imagemin', function(done) {
 });
 
 gulp.task('build', function(done) {
-  gulp.parallel('removedist', 'sass', 'imagemin', 'scripts');
+  gulp.parallel('removedist', 'sass', 'scripts');
   var buildFiles = gulp
     .src(['app/*.html', 'app/.htaccess'])
     .pipe(gulp.dest('dist'));
@@ -100,6 +100,11 @@ gulp.task('build', function(done) {
   var buildJs = gulp.src(['app/js/scripts.min.js']).pipe(gulp.dest('dist/js'));
 
   var buildScript = gulp.src(['app/js/script.js']).pipe(gulp.dest('dist/js'));
+
+  var buildImage = gulp
+    .src('app/img/**/*')
+    .pipe(cache(imagemin()))
+    .pipe(gulp.dest('dist/img'));
 
   var buildFonts = gulp.src(['app/fonts/**/*']).pipe(gulp.dest('dist/fonts'));
   done();
